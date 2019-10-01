@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="userViewModel"
+            type="com.mbrhe.mytask.viewModel.UserViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        tools:context=".view.LoginActivity">
+
+        <EditText
+            android:id="@+id/editEid"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/edittext_curved"
+            android:digits="0123456789"
+            android:hint="Eid"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="12dp"
+            android:text="@={userViewModel.eid}"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_curved"
+            android:hint="Name"
+            android:inputType="textEmailAddress"
+            android:maxLength="55"
+            android:padding="12dp"
+            android:text="@={userViewModel.name}"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editIdBarahno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_curved"
+            android:hint="IdBarahno"
+            android:inputType="text"
+            android:maxLength="10"
+            android:padding="12dp"
+            android:text="@={userViewModel.idbarahno}"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_curved"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:maxLength="55"
+            android:padding="12dp"
+            android:text="@={userViewModel.email}"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editUnifiedNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_curved"
+            android:digits="0123456789"
+            android:hint="UnifiedNo"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:padding="12dp"
+            android:text="@={userViewModel.unifiednumber}"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_curved"
+            android:digits="0123456789"
+            android:hint="Mobile No"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:maxLength="15"
+            android:padding="12dp"
+            android:text="@={userViewModel.mobileno}"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_green_curved"
+            android:onClick="@{()-> userViewModel.onLoginClick()}"
+            android:text="Login"
+            android:textColor="@color/colorWhite" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="@{userViewModel.busy}" />
+
+    </LinearLayout>
+
+</layout>
